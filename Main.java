@@ -1,16 +1,6 @@
 import java.util.ArrayList;
-import org.w3c.dom.css.RGBColor;
 
 public class Main{
-    public class Device{
-        Integer id;
-        String name;
-        Boolean is_on;
-    }
-    private class Light extends Device{
-        Integer brightness;
-        RGBColor color;
-    }
     private class Thermostat extends Device{
         Integer current_temperature;
         Integer target_temperature;
@@ -22,5 +12,12 @@ public class Main{
     private class House{
         String name;
         ArrayList<Room> rooms;
+    }
+
+    public static void main(String[] args) {
+        Device testDevice = new Device();
+        System.out.println(testDevice.is_on);
+        testDevice.toggleOnOff();
+        System.out.println(testDevice.is_on);
     }
 }
